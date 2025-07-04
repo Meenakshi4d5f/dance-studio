@@ -1,7 +1,13 @@
-export default function App() {
+import React from "react";
+import Navbar from "./components/Navbar";
+
+function App() {
   return (
-    <div className="bg-purple-600 text-white text-2xl p-6 rounded">
-      Tailwind 3 is working! 🎉
+    <div>
+      <Navbar />
+      {/* Add homepage content here later */}
     </div>
   );
 }
+
+export default App;
