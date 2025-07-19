@@ -7,6 +7,8 @@ import Contemporary from "./pages/Contemporary";
 import Bollywood from "./pages/Bollywood";
 import Freestyle from "./pages/Freestyle";
 import Classical from "./pages/Classical";
+import WorkshopCard from "./pages/WorkshopCard";
+import Workshops from "./pages/WorkshopCard";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path="/classes/bollywood" element={<Bollywood />} />
         <Route path="/classes/freestyle" element={<Freestyle />} />
         <Route path="/classes/classical" element={<Classical />} />
+        <Route path="/Workshops" element={<Workshops />} />
+
       </Routes>
     </Router>
   );
