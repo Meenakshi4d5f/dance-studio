@@ -19,21 +19,17 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="flex flex-col items-center px-6 py-4 bg-black shadow-md relative z-50">
+      <nav className="flex flex-col items-center px-6 py-4 bg-yellow-500 shadow-md relative z-50">
         <div className="flex justify-between items-center w-full max-w-7xl">
           <div className="flex-1"></div>
 
           {/* Center Navigation */}
-          <div class="text-left fixed top-0 left-0 p-4 font-extrabold text-yellow-500 z-50">
-            <h1>Dance Studio</h1></div>
-            
-          
           <div className="flex gap-8 justify-center flex-1 items-center relative">
-            <Link to="/" className="font-semibold hover:text-yellow-500 text-white">
+            <Link to="/" className="font-semibold hover:text-yellow-500">
               Home
             </Link>
 
-            <Link to="/WorkshopCard" className="font-semibold  text-white hover:text-yellow-500">
+            <Link to="/workshops" className="font-semibold hover:text-yellow-500">
               Workshops
             </Link>
 
@@ -41,18 +37,18 @@ export default function Navbar() {
             <div className="relative">
               <button
                 onClick={toggleClassesDropdown}
-                className="font-semibold  text-white hover:text-yellow-500 focus:outline-none"
+                className="font-semibold hover:text-yellow-500 focus:outline-none"
               >
                 Classes
               </button>
               {showClassesDropdown && (
-                <div className="absolute top-10 left-0 text-yellow-500 bg-black border rounded shadow-md p-2 z-50 w-44">
+                <div className="absolute top-10 left-0 bg-black border rounded shadow-md p-2 z-50 w-44">
                   <ul className="space-y-1">
                     {["hiphop", "contemporary", "bollywood", "freestyle", "classical"].map((type) => (
                       <li key={type}>
                         <Link
                           to={`/classes/${type}`}
-                          className="block px-4 py-2  hover:bg-white"
+                          className="block px-4 py-2 hover:bg-yellow-500"
                           onClick={() => setShowClassesDropdown(false)}
                         >
                           {type.charAt(0).toUpperCase() + type.slice(1)}
@@ -66,7 +62,7 @@ export default function Navbar() {
           </div>
 
           {/* Right Section */}
-          <div className="flex items-center gap-8 text-sm text-gray-300 flex-1 justify-end">
+          <div className="flex items-center gap-8 text-sm text-gray-700 flex-1 justify-end">
             {/* Contact Us */}
             <div
               className="relative"
@@ -75,14 +71,14 @@ export default function Navbar() {
             >
               <button className="hover:text-yellow-500 focus:outline-none font-semibold">Contact Us</button>
               {showContactInfo && (
-                <div className="absolute top-10 left-0 bg-black border text-yellow-500 rounded shadow-md z-50 flex flex-col items-start space-y-4 py-4 pr-8 pl-0">
+                <div className="absolute top-10 left-0 bg-white border rounded shadow-md z-50 flex flex-col items-start space-y-4 py-4 pr-8 pl-0">
                   <a
                     href="https://www.instagram.com/DanceUpOfficial"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 hover:text-yellow-500 pl-4"
                   >
-                    <img src={instagramIcon} alt="Instagram" className="w-6 h-6 " />
+                    <img src={instagramIcon} alt="Instagram" className="w-6 h-6" />
                     <span>@DanceUpOfficial</span>
                   </a>
                   <a
@@ -109,7 +105,7 @@ export default function Navbar() {
                 <span>Location</span>
               </button>
               {showLocationInfo && (
-                <div className="absolute top-10 right-0 bg-black border text-yellow-500 rounded shadow-md p-4 z-50 w-64 text-left">
+                <div className="absolute top-10 right-0 bg-white border rounded shadow-md p-4 z-50 w-64 text-left">
                   <span>
                     Dance-up, Behind Brand Factory, 2nd cross, Marathahalli, Bangalore-37, India
                   </span>
@@ -134,15 +130,15 @@ export default function Navbar() {
 
       {/* Demo Class Modal */}
       {showDemoModal && (
-        <div className="fixed inset-0 text-white bg-black bg-opacity-40 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
           <div className="bg-yellow-500 rounded-2xl shadow-xl p-8 w-full max-w-md relative animate-fadeIn">
             <button
-              className="absolute top-2 right-3 text-xl font-bold text-white-400 hover:text-black-500"
+              className="absolute top-2 right-3 text-xl font-bold text-gray-400 hover:text-black-500"
               onClick={closeModal}
             >
               ×
             </button>
-            <h2 className="text-2xl font-bold text-black mb-4 text-center">Book a Demo Class</h2>
+            <h2 className="text-2xl font-bold text-black-600 mb-4 text-center">Book a Demo Class</h2>
             <form className="space-y-4">
               <input
                 type="text"
@@ -156,10 +152,10 @@ export default function Navbar() {
               />
               <input
                 type="date"
-                className="w-full border border-gray-300  text-gray-400 rounded px-4 py-2 focus:outline-none focus:border-black"
+                className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:border-pink-500"
               />
               <select
-                className="w-full border border-gray-300 text-gray-400 rounded px-4 py-2 focus:outline-none focus:border-black"
+                className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:border-pink-500"
               >
                 <option value="">Select Class</option>
                 <option value="Hip Hop">Hip Hop</option>

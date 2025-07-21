@@ -1,15 +1,35 @@
-import React from "react";
+
+import React, { useState, useEffect } from "react";
+const backgrounds = ['/bg3.jpeg', '/hiphopbg.jpeg', '/bollywoodbg.jpeg'];
 
 export default function Hero() {
-  return (
-    <div className="w-full min-h-screen flex flex-col justify-start items-center bg-gradient-to-r from-pink-100 via-pink-200 to-purple-100 px-10 py-20 pt-[25vh]"> {/* Changed justify-center to justify-start and added pt-[15vh] */}
-      <h1 className="text-[8rem] font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-700 drop-shadow-lg leading-none">
-        DANCE UP
-      </h1>
+  const [currentBgIndex, setCurrentBgIndex] = useState(0);
 
-      <p className="text-3xl sm:text-4xl md:text-5xl font-semibold italic text-purple-800 mt-4 tracking-wide">
-        Where grooves are born
-      </p>
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentBgIndex((prevIndex) => (prevIndex + 1) % backgrounds.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div
+      className="min-h-screen flex flex-col justify-center items-center text-white text-center"
+      style={{
+        backgroundImage: `url(${backgrounds[currentBgIndex]})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        transition: "background-image 1s ease-in-out",
+      }}
+    >
+      <main className="relative z-10 flex flex-col items-center justify-center text-center px-4 pt-32">
+        <h1 className="text-5xl md:text-7xl font-extrabold leading-tight drop-shadow-lg">
+          Let the Rhythm <span className="text-yellow-400">Move You</span>
+        </h1>
+        <p className="mt-6 text-xl md:text-2xl max-w-xl drop-shadow-md">
+          Join our vibrant community and explore the art of dance with expert instructors and energetic sessions.
+        </p>
+        </main>
     </div>
   );
 }

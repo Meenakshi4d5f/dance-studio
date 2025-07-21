@@ -7,8 +7,8 @@ import Contemporary from "./pages/Contemporary";
 import Bollywood from "./pages/Bollywood";
 import Freestyle from "./pages/Freestyle";
 import Classical from "./pages/Classical";
-import WorkshopCard from "./pages/WorkshopCard";
-import Workshops from "./pages/WorkshopCard";
+import WorkshopCard from "./pages/WorkshopCard"; // This line is no longer needed in App.js
+ // Import the new WorkshopsPage component
 
 function App() {
   return (
@@ -21,8 +21,7 @@ function App() {
         <Route path="/classes/bollywood" element={<Bollywood />} />
         <Route path="/classes/freestyle" element={<Freestyle />} />
         <Route path="/classes/classical" element={<Classical />} />
-        <Route path="/Workshops" element={<Workshops />} />
-
+        <Route path="/WorkshopCard" element={<WorkshopCard />} /> {/* Use the new WorkshopsPage */}
       </Routes>
     </Router>
   );
