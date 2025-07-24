@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-
 export default function HipHop() {
   const [showDemoModal, setShowDemoModal] = useState(false);
 
@@ -40,7 +39,7 @@ export default function HipHop() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/contemp.jpeg" // Make sure this path is correct for your project structure
+          src="/freestyle1.jpeg" // Make sure this path is correct for your project structure
           alt="Dance Background"
           className="w-full h-full object-cover"
         />
