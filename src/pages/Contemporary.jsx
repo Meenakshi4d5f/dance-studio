@@ -40,7 +40,7 @@ export default function HipHop() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="contemp.jpeg" // Make sure this path is correct for your project structure
+          src="/contemp.jpeg" // Make sure this path is correct for your project structure
           alt="Dance Background"
           className="w-full h-full object-cover"
         />
